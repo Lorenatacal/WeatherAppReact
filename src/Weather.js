@@ -5,14 +5,9 @@ import { geolocated } from 'react-geolocated';
 class Weather extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            lat: 0,
-            long: 0,
-        }
     }
 
     render() {
-        console.log(process.env, 'process');
         if (this.props.coords){
             axios.get('https://api.openweathermap.org/data/2.5/weather?', {
                 params: {
@@ -22,12 +17,17 @@ class Weather extends React.Component {
                 }
             })
             .then(function (response) {
-                console.log(response, "Api");
+                console.log(response)
             })
         }
         return(  
             <div>
-                <h2> The weather today:</h2>   
+                <h2> The weather today in:</h2> 
+                <h3> Today is going to be (main weather)  (main description)</h3>
+                <h3> (main icon) </h3>
+                <h3> The temperature is: </h3>
+                <h3> The wind is blowing with: </h3>
+                <h3> and we have a humidity of: </h3>
             </div>
         )
     }
