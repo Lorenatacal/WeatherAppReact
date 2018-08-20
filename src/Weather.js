@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { geolocated } from 'react-geolocated';
+const kelvinToCelsius = require('kelvin-to-celsius');
 
 class Weather extends React.Component {
     constructor(props) {
@@ -10,8 +11,11 @@ class Weather extends React.Component {
             name: '',
             country: '',
             description: '',
+            clouds: 0,
             icon: '',
             temperature: 0,
+            minTemp: 0,
+            maxTemp: 0,
             wind: 0,
             humidity:0,
         }
@@ -31,17 +35,23 @@ class Weather extends React.Component {
                 this.setState({
                     response: true,
                     name: response.data.name,
+                    country: response.data.sys.country,
+                    description: response.data.weather[0].description,
+                    temperature: kelvinToCelsius(response.data.main.temp),
+                    minTemp: kelvinToCelsius(response.data.main.temp_min),
+                    maxTemp: kelvinToCelsius(response.data.main.temp_max),
+                    clouds: response.data.clouds.all,
+                    wind: response.data.wind.speed,
+                    humidity: response.data.main.humidity,
                 })
             })
         }
         return(  
             <div>
-                <h2> The weather today in: {this.state.name}, {this.state.country}</h2> 
-                <h3> Today is going to be {this.state.description}</h3>
-                <h3> {this.state.icon} </h3>
-                <h3> The temperature is: {this.state.temperature} </h3>
-                <h3> The wind is blowing with: {this.state.wind} </h3>
-                <h3> and we have a humidity of: {this.state.humidity}</h3>
+                <h2> Today in: {this.state.name}, {this.state.country}</h2> 
+                <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
+                <h3> The teperature is: {this.state.temperature}°C, with minimum of {this.state.minTemp}°C and a maximum of {this.state.maxTemp}°C</h3>
+                <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
             </div>
         )
     }
