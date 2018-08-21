@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { geolocated } from 'react-geolocated';
-const kelvinToCelsius = require('kelvin-to-celsius');
+import kelvinToCelsius from 'kelvin-to-celsius';
 
 class Weather extends React.Component {
     constructor(props) {
