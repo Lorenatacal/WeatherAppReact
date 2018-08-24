@@ -23,13 +23,13 @@ class Weather extends React.Component {
             wind: 0,
             humidity:0,
         };
-
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick () {
+    handleClick = (event) => {
         this.setState({
             tempCelsiuse: this.state.tempFahrenheit,
+            minTempCelsiuse: this.state.minTempFahrenheit,
+            maxTempCelsiuse: this.state.maxTempFahrenheit,
         });
     }
 
