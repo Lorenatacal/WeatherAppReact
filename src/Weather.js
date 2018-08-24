@@ -22,12 +22,16 @@ class Weather extends React.Component {
             maxTempFahrenheit: 0,
             wind: 0,
             humidity:0,
-        }
+        };
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    // handleClick = () => {
-    //     console.log("Merge")
-    // }
+    handleClick () {
+        this.setState({
+            tempCelsiuse: this.state.tempFahrenheit,
+        });
+    }
 
     render() {
         if (this.props.coords && !this.state.response){
@@ -63,7 +67,7 @@ class Weather extends React.Component {
                 <h3> The teperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
                 <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
                 <button>Change °C</button>
-                <button onClick={() => this.setState({tempCelsiuse: this.state.tempFahrenheit,})}>Change °F</button>
+                <button onClick={this.handleClick}>Change °F</button>
             </div>
         )
     }
