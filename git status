@@ -1,0 +1,59 @@
+[33mcommit 0f81b2041e669da773f3fc36fddaddfd089cf348[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Tue Aug 21 10:33:29 2018 +0100
+
+    Create buttons to change the temperature from Celsiuse to Farenheit and the reverse
+
+[33mcommit 314df8588948103732500c8713d156ad1ee0cfc1[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Mon Aug 20 11:04:47 2018 +0100
+
+    Render the weather data from the API call
+
+[33mcommit 1d129be9c669dc40a369a381feb0f4e328465f6d[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Sun Aug 19 22:43:50 2018 +0100
+
+    Render the location from the API data and stop an infinite loop
+
+[33mcommit 18b4df3ff1818f782d09a3568192b1c90894f555[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Sun Aug 19 21:22:28 2018 +0100
+
+    Add the text for the data that will be rendered on the screen
+
+[33mcommit 800403660c48756f3459b383a26dccae34769893[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Sun Aug 19 13:25:45 2018 +0100
+
+    Make the API call for the weather data
+
+[33mcommit fda17f8bc0513f18d12c6d92bcd2ca9547364d24[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Tue Aug 14 09:50:36 2018 +0100
+
+    Add the react component that is showing the location of the user
+
+[33mcommit be4b1f546d718628df48deb57155af051c5433a9[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Mon Aug 13 09:55:59 2018 +0100
+
+    Import axios
+
+[33mcommit 53d80d6a595711342947ac32648c022699829b3a[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Mon Aug 13 09:49:57 2018 +0100
+
+    Create the component Header in the project Local Weater and import it in the app
+
+[33mcommit f4a93a3984738ffba6618b3dce99dcbf22ecc83d[m
+Author: Lorenatacal <Lorena.tacal@gmail.com>
+Date:   Sun Aug 12 22:56:20 2018 +0100
+
+    Add the header of the project Local Weather
+
+[33mcommit e52c568f5fca89ed12824f0108526b67dd33adbf[m
+Author: Lorenatacal <Lorenatacal@gmail.com>
+Date:   Sun Aug 12 22:51:40 2018 +0100
+
+    First commit for the project

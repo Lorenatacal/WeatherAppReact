@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { geolocated } from 'react-geolocated';
 import kelvinToCelsius from 'kelvin-to-celsius';
+import kelvinToFahrenheit from 'kelvin-to-fahrenheit';
 
 class Weather extends React.Component {
     constructor(props) {
@@ -13,13 +14,20 @@ class Weather extends React.Component {
             description: '',
             clouds: 0,
             icon: '',
-            temperature: 0,
-            minTemp: 0,
-            maxTemp: 0,
+            tempCelsiuse: 0,
+            tempFahrenheit: 0,
+            minTempCelsiuse: 0,
+            minTempFahrenheit: 0,
+            maxTempCelsiuse: 0,
+            maxTempFahrenheit: 0,
             wind: 0,
             humidity:0,
         }
     }
+
+    // handleClick = () => {
+    //     console.log("Merge")
+    // }
 
     render() {
         if (this.props.coords && !this.state.response){
@@ -31,15 +39,17 @@ class Weather extends React.Component {
                 }
             })
             .then((response) => {
-                console.log(response)
                 this.setState({
                     response: true,
                     name: response.data.name,
                     country: response.data.sys.country,
                     description: response.data.weather[0].description,
-                    temperature: kelvinToCelsius(response.data.main.temp),
-                    minTemp: kelvinToCelsius(response.data.main.temp_min),
-                    maxTemp: kelvinToCelsius(response.data.main.temp_max),
+                    tempCelsiuse: kelvinToCelsius(response.data.main.temp),
+                    tempFahrenheit: kelvinToFahrenheit(response.data.main.temp),
+                    minTempCelsiuse: kelvinToCelsius(response.data.main.temp_min),
+                    minTempFahrenheit: kelvinToFahrenheit(response.data.main.temp_min),
+                    maxTempCelsiuse: kelvinToCelsius(response.data.main.temp_max),
+                    maxTempFahrenheit: kelvinToFahrenheit(response.data.main.temp_max),
                     clouds: response.data.clouds.all,
                     wind: response.data.wind.speed,
                     humidity: response.data.main.humidity,
@@ -50,8 +60,10 @@ class Weather extends React.Component {
             <div>
                 <h2> Today in: {this.state.name}, {this.state.country}</h2> 
                 <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
-                <h3> The teperature is: {this.state.temperature}°C, with minimum of {this.state.minTemp}°C and a maximum of {this.state.maxTemp}°C</h3>
+                <h3> The teperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
                 <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
+                <button>Change °C</button>
+                <button onClick={() => console.log("I don't know what I am doing!")}>Change °F</button>
             </div>
         )
     }
