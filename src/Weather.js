@@ -63,7 +63,7 @@ class Weather extends React.Component {
                 <h3> The teperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
                 <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
                 <button>Change °C</button>
-                <button onClick={() => console.log("I don't know what I am doing!")}>Change °F</button>
+                <button onClick={() => this.setState({tempCelsiuse: this.state.tempFahrenheit,})}>Change °F</button>
             </div>
         )
     }
