@@ -15,6 +15,7 @@ class Weather extends React.Component {
             clouds: 0,
             icon: '',
             tempCelsiuse: 0,
+            tempCelsiuseI: 0,
             tempFahrenheit: 0,
             minTempCelsiuse: 0,
             minTempFahrenheit: 0,
@@ -22,24 +23,21 @@ class Weather extends React.Component {
             maxTempFahrenheit: 0,
             wind: 0,
             humidity:0,
+            showCelsiuse: true,
         };
     }
 
-    handleClick = () => {
+    handleClickFahrenheit = () => {
         this.setState({
-            tempCelsiuse: this.state.tempFahrenheit,
-            minTempCelsiuse: this.state.minTempFahrenheit,
-            maxTempCelsiuse: this.state.maxTempFahrenheit,
+            showCelsiuse: false,
         });
     }
 
-    // handleClickC = () => {
-    //     this.setState({
-    //         tempFahrenheit: this.state.tempCelsiuse,
-    //         minTempFahrenheit: this.state.minTempCelsiuse,
-    //         maxTempFahrenheit: this.state.maxTempCelsiuse,
-    //     });
-    // }
+    handleClickCelsiuse = () => {
+        this.setState({
+            showCelsiuse: true,
+        });
+    }
 
     render() {
         if (this.props.coords && !this.state.response){
@@ -68,16 +66,30 @@ class Weather extends React.Component {
                 })
             })
         }
-        return(  
-            <div>
-                <h2> Today in: {this.state.name}, {this.state.country}</h2> 
-                <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
-                <h3> The teperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
-                <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
-                <button onClick={() => console.log("Working")}>Change °C</button>
-                <button onClick={this.handleClick}>Change °F</button>
-            </div>
-        )
+
+        if(this.state.showCelsiuse === true) {
+            return(  
+                <div>
+                    <h2> Today in: {this.state.name}, {this.state.country}</h2> 
+                    <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
+                    <h3> The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
+                    <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
+                    <button onClick={this.handleClickFahrenheit}>Change °F</button>
+                    <button onClick={this.handleClickCelsiuse}>Change °C</button>
+                </div>
+            )
+        } else {
+            return(
+                <div>
+                    <h2> Today in: {this.state.name}, {this.state.country}</h2> 
+                    <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
+                    <h3> The temperature is: {this.state.tempFahrenheit}°C, with minimum of {this.state.minTempFahrenheit}°C and a maximum of {this.state.maxTempFahrenheit}°C</h3>
+                    <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
+                    <button onClick={this.handleClickFahrenheit}>Change °F</button>
+                    <button onClick={this.handleClickCelsiuse}>Change °C</button>
+                </div>
+            )
+        }
     }
 }
 
