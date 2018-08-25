@@ -25,13 +25,21 @@ class Weather extends React.Component {
         };
     }
 
-    handleClick = (event) => {
+    handleClick = () => {
         this.setState({
             tempCelsiuse: this.state.tempFahrenheit,
             minTempCelsiuse: this.state.minTempFahrenheit,
             maxTempCelsiuse: this.state.maxTempFahrenheit,
         });
     }
+
+    // handleClickC = () => {
+    //     this.setState({
+    //         tempFahrenheit: this.state.tempCelsiuse,
+    //         minTempFahrenheit: this.state.minTempCelsiuse,
+    //         maxTempFahrenheit: this.state.maxTempCelsiuse,
+    //     });
+    // }
 
     render() {
         if (this.props.coords && !this.state.response){
@@ -66,7 +74,7 @@ class Weather extends React.Component {
                 <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
                 <h3> The teperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
                 <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
-                <button>Change °C</button>
+                <button onClick={() => console.log("Working")}>Change °C</button>
                 <button onClick={this.handleClick}>Change °F</button>
             </div>
         )
