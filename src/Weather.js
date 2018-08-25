@@ -3,6 +3,27 @@ import axios from 'axios';
 import { geolocated } from 'react-geolocated';
 import kelvinToCelsius from 'kelvin-to-celsius';
 import kelvinToFahrenheit from 'kelvin-to-fahrenheit';
+import styled from 'styled-components';
+
+const WeatherContainer = styled.div`
+    border-radius: 20px;
+    padding: 0.25em;
+    margin: 4em 15em;
+    border: 1px solid lightgrey;
+    align: center;
+    text-align: center;
+`;
+
+const StyledButton = styled.button`
+    border-radius: 5px;
+    padding: 0.25em;
+    margin: 2em;
+    border: 0.5px, #007bff;
+    background: #007bff;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+`
 
 class Weather extends React.Component {
     constructor(props) {
@@ -49,6 +70,7 @@ class Weather extends React.Component {
                 }
             })
             .then((response) => {
+                console.log(response)
                 this.setState({
                     response: true,
                     name: response.data.name,
@@ -68,19 +90,18 @@ class Weather extends React.Component {
         }
 
                 return(  
-                    <div>
+                    <WeatherContainer>
                         <h2> Today in: {this.state.name}, {this.state.country}</h2> 
                         <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
-                        {this.state.showCelsiuse ? ( 
-                            <h3>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3>
-                        ) : (
-                            <h3> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</h3>
-                        )
-                    }
+                        {
+                            this.state.showCelsiuse ?  
+                                <h3>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3> : 
+                                <h3> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</h3>
+                        }
                         <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
-                        <button onClick={this.handleClickFahrenheit}>Change °F</button>
-                        <button onClick={this.handleClickCelsiuse}>Change °C</button>
-                    </div>
+                        <StyledButton onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
+                        <StyledButton onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
+                    </WeatherContainer>
                 )
     }
 }
