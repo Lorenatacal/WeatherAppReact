@@ -4,6 +4,7 @@ import { geolocated } from 'react-geolocated';
 import kelvinToCelsius from 'kelvin-to-celsius';
 import kelvinToFahrenheit from 'kelvin-to-fahrenheit';
 import styled from 'styled-components';
+import Icon from './Icon';
 
 const WeatherContainer = styled.div`
     border-radius: 20px;
@@ -25,28 +26,7 @@ const StyledButton = styled.button`
     text-align: center;
     font-size: 1.2rem;
 `
-class Icon extends React.Component {
-    constructor (props) {
-        super(props)
-        this.state = {
-            rainIcon: "http://icons.iconarchive.com/icons/large-icons/large-weather/256/rain-icon.png",
-            snowIcon: "http://www.free-icons-download.net/images/blue-snow-icon-38706.png",
-            sunIcon: "http://www.pngmart.com/files/3/Sun-PNG-Photos.png",
-            windIcon: "http://moziru.com/images/wind-clipart-weather-symbol-11.png",
-            cloudIcon: "https://vignette.wikia.nocookie.net/farmville/images/5/57/Puffy_Cloud-icon.png/revision/latest?cb=20121010151231",
-            fogIcon: "http://icongal.com/gallery/download/43079/256/png",
-        };
-    }
-    render() {
-        if("is raining".includes("rain")) {
-            return (
-                <div>
-                    <img src={this.state.rainIcon} />
-                </div>
-            )
-        }
-    }
-}
+
 
 class Weather extends React.Component {
     constructor(props) {
@@ -114,7 +94,7 @@ class Weather extends React.Component {
                 return(  
                     <WeatherContainer>
                         <h2> Today in: {this.state.name}, {this.state.country}</h2>
-                        <Icon /> 
+                        <Icon description={this.state.description}/> 
                         <p> We have {this.state.description}, with {this.state.clouds}% clouds</p>
                         {
                             this.state.showCelsiuse ?  
@@ -128,6 +108,7 @@ class Weather extends React.Component {
                 )
     }
 }
+
 
 export default geolocated(
     {
