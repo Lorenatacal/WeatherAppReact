@@ -12,6 +12,7 @@ const WeatherContainer = styled.div`
     border: 1px solid lightgrey;
     align: center;
     text-align: center;
+    font-family: arial;
 `;
 
 const StyledButton = styled.button`
@@ -24,6 +25,28 @@ const StyledButton = styled.button`
     text-align: center;
     font-size: 1.2rem;
 `
+class Icon extends React.Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            rainIcon: "http://icons.iconarchive.com/icons/large-icons/large-weather/256/rain-icon.png",
+            snowIcon: "http://www.free-icons-download.net/images/blue-snow-icon-38706.png",
+            sunIcon: "http://www.pngmart.com/files/3/Sun-PNG-Photos.png",
+            windIcon: "http://moziru.com/images/wind-clipart-weather-symbol-11.png",
+            cloudIcon: "https://vignette.wikia.nocookie.net/farmville/images/5/57/Puffy_Cloud-icon.png/revision/latest?cb=20121010151231",
+            fogIcon: "http://icongal.com/gallery/download/43079/256/png",
+        };
+    }
+    render() {
+        if("is raining".includes("rain")) {
+            return (
+                <div>
+                    <img src={this.state.rainIcon} />
+                </div>
+            )
+        }
+    }
+}
 
 class Weather extends React.Component {
     constructor(props) {
@@ -70,7 +93,6 @@ class Weather extends React.Component {
                 }
             })
             .then((response) => {
-                console.log(response)
                 this.setState({
                     response: true,
                     name: response.data.name,
@@ -91,14 +113,15 @@ class Weather extends React.Component {
 
                 return(  
                     <WeatherContainer>
-                        <h2> Today in: {this.state.name}, {this.state.country}</h2> 
-                        <h3> We have {this.state.description}, with {this.state.clouds}% clouds</h3>
+                        <h2> Today in: {this.state.name}, {this.state.country}</h2>
+                        <Icon /> 
+                        <p> We have {this.state.description}, with {this.state.clouds}% clouds</p>
                         {
                             this.state.showCelsiuse ?  
-                                <h3>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</h3> : 
-                                <h3> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</h3>
+                                <p>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</p> : 
+                                <p> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</p>
                         }
-                        <h3> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</h3>
+                        <p> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</p>
                         <StyledButton onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
                         <StyledButton onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
                     </WeatherContainer>
