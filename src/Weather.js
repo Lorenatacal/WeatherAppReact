@@ -9,7 +9,9 @@ import Icon from './Icon';
 const WeatherContainer = styled.div`
     border-radius: 20px;
     padding: 0.25em;
-    margin: 2em 15em;
+    margin: 2em;
+    margin-left: 25px;
+    margin-right: 25px;
     border: 1px solid lightgrey;
     align: center;
     text-align: center;
