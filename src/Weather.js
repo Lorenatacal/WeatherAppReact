@@ -9,7 +9,7 @@ import Icon from './Icon';
 const WeatherContainer = styled.div`
     border-radius: 20px;
     padding: 0.25em;
-    margin: 4em 15em;
+    margin: 2em 15em;
     border: 1px solid lightgrey;
     align: center;
     text-align: center;
@@ -19,12 +19,22 @@ const WeatherContainer = styled.div`
 const StyledButton = styled.button`
     border-radius: 5px;
     padding: 0.25em;
-    margin: 2em;
+    margin: 1em;
     border: 0.5px, #007bff;
     background: #007bff;
     color: white;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-family: 'Merriweather', serif;
+`
+
+const StyledLocation = styled.h2`
+    font-family: 'Source Serif Pro', serif;
+`
+
+const StyledText = styled.p`
+    font-family: 'Merriweather', serif;
+    font-size:  1.1rem;
 `
 
 
@@ -91,17 +101,17 @@ class Weather extends React.Component {
             })
         }
 
-                return(  
+                return(
                     <WeatherContainer>
-                        <h2> Today in: {this.state.name}, {this.state.country}</h2>
-                        <Icon description={this.state.description}/> 
-                        <p> We have {this.state.description}, with {this.state.clouds}% clouds</p>
+                        <StyledLocation> Today in: {this.state.name}, {this.state.country}</StyledLocation>
+                        <Icon description={this.state.description}/>
+                        <StyledText> We have {this.state.description}, with {this.state.clouds}% clouds</StyledText>
                         {
                             this.state.showCelsiuse ?  
-                                <p>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</p> : 
-                                <p> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</p>
+                                <StyledText>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</StyledText> : 
+                                <StyledText> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</StyledText>
                         }
-                        <p> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</p>
+                        <StyledText> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</StyledText>
                         <StyledButton onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
                         <StyledButton onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
                     </WeatherContainer>

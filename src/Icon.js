@@ -15,7 +15,6 @@ class Icon extends React.Component {
         };
     }
     render() {
-        console.log(this.props.description, "description")
         if(this.props.description.includes("rain")) {
             return (
                 <div>
@@ -49,13 +48,13 @@ class Icon extends React.Component {
         } else if(this.props.description.includes("fog")) {
             return (
                 <div>
-                    <img src={this.state.fog} className="Icon-logo"/>
+                    <img src={this.state.fogIcon} className="Icon-logo"/>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <img src={this.state.mixt} className="Icon-logo"/>
+                    <img src={this.state.mixtIcon} className="Icon-logo"/>
                 </div>
             )
         }
