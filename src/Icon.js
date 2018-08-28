@@ -12,6 +12,7 @@ class Icon extends React.Component {
             cloudIcon: "https://vignette.wikia.nocookie.net/farmville/images/5/57/Puffy_Cloud-icon.png/revision/latest?cb=20121010151231",
             fogIcon: "http://icongal.com/gallery/download/43079/256/png",
             mixtIcon: "https://images.onlinelabels.com/images/clip-art/Anonymous/Anonymous_simple_weather_symbols_13.png",
+            
         };
     }
     render() {

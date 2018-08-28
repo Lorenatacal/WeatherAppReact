@@ -2,3 +2,11 @@
     animation: App-logo-spin infinite 30s linear;
     height: 90px;
   }
+
+  .Background {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 100% top;
+      background-attachment: fixed;
+      text-align: center;
+}
