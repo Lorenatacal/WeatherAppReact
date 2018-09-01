@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { geolocated } from 'react-geolocated';
 import kelvinToCelsius from 'kelvin-to-celsius';
 import kelvinToFahrenheit from 'kelvin-to-fahrenheit';
 import styled from 'styled-components';
@@ -122,12 +121,5 @@ class Weather extends React.Component {
 }
 
 
-export default geolocated(
-    {
-        positionOptions: {
-            enableHighAccuracy: false,
-        },
-        userDecisionTimeout: 5000,
-    }
-)(Weather);
+export default Weather;
 
