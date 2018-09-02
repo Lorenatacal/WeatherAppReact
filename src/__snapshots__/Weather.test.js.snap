@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Weather should render correctly with data 1`] = `
+<styled.div>
+  <styled.h2>
+     Today in: 
+    , 
+  </styled.h2>
+  <Icon
+    description=""
+  />
+  <styled.p>
+     We have 
+    , with 
+    0
+    % clouds
+  </styled.p>
+  <styled.p>
+    The temperature is: 
+    0
+    °C, with minimum of 
+    0
+    °C and a maximum of 
+    0
+    °C
+  </styled.p>
+  <styled.p>
+     The wind is blowing with: 
+    0
+    m/s and we have a humidity of: 
+    0
+    %
+  </styled.p>
+  <styled.button
+    onClick={[Function]}
+  >
+    Change °F
+  </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Change °C
+  </styled.button>
+</styled.div>
+`;
+
+exports[`Weather should render correctly without data 1`] = `
+<styled.div>
+  <styled.h2>
+     Today in: 
+    , 
+  </styled.h2>
+  <Icon
+    description=""
+  />
+  <styled.p>
+     We have 
+    , with 
+    0
+    % clouds
+  </styled.p>
+  <styled.p>
+    The temperature is: 
+    0
+    °C, with minimum of 
+    0
+    °C and a maximum of 
+    0
+    °C
+  </styled.p>
+  <styled.p>
+     The wind is blowing with: 
+    0
+    m/s and we have a humidity of: 
+    0
+    %
+  </styled.p>
+  <styled.button
+    onClick={[Function]}
+  >
+    Change °F
+  </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Change °C
+  </styled.button>
+</styled.div>
+`;

@@ -75,7 +75,9 @@ class Weather extends React.Component {
     }
 
     render() {
+        console.log('before api call');
         if (this.props.coords && !this.state.response){
+            console.log('inside if');
             axios.get('https://api.openweathermap.org/data/2.5/weather?', {
                 params: {
                     lat: this.props.coords.latitude,
@@ -100,23 +102,23 @@ class Weather extends React.Component {
                     humidity: response.data.main.humidity,
                 })
             })
+        console.log(this.state, 'state');
         }
-
-                return(
-                    <WeatherContainer>
-                        <StyledLocation> Today in: {this.state.name}, {this.state.country}</StyledLocation>
-                        <Icon description={this.state.description}/>
-                        <StyledText> We have {this.state.description}, with {this.state.clouds}% clouds</StyledText>
-                        {
-                            this.state.showCelsiuse ?  
-                                <StyledText>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</StyledText> : 
-                                <StyledText> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</StyledText>
-                        }
-                        <StyledText> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</StyledText>
-                        <StyledButton onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
-                        <StyledButton onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
-                    </WeatherContainer>
-                )
+        return(
+            <WeatherContainer>
+                <StyledLocation> Today in: {this.state.name}, {this.state.country}</StyledLocation>
+                <Icon description={this.state.description}/>
+                <StyledText> We have {this.state.description}, with {this.state.clouds}% clouds</StyledText>
+                {
+                    this.state.showCelsiuse ?  
+                        <StyledText>The temperature is: {this.state.tempCelsiuse}°C, with minimum of {this.state.minTempCelsiuse}°C and a maximum of {this.state.maxTempCelsiuse}°C</StyledText> : 
+                        <StyledText> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</StyledText>
+                }
+                <StyledText> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</StyledText>
+                <StyledButton onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
+                <StyledButton onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
+            </WeatherContainer>
+        )
     }
 }
 

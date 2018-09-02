@@ -28,7 +28,7 @@ class Icon extends React.Component {
                     <img src={this.state.snowIcon} className="Icon-logo"/>
                 </div>
             )
-        } else if(this.props.description.includes("sun")) {
+        } else if(this.props.description.includes("sun") || this.props.description.includes("clear")) {
             return (
                 <div>
                     <img src={this.state.sunIcon} className="Icon-logo"/>
