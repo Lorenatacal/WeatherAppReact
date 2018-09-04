@@ -1,7 +1,6 @@
-### Using dotenv:
-    - install dotevn using npm install dotenv --save
-    - create a .env file in the root
-    - save in this folder your API key -> example: REACT_APP_WEATHER_API_KEY=myAPIKey
-    - import dotenv in index.js -> example: import dotenv from 'dotenv';
-    - add the .env file in .gitignore file
-    - use the environment variable using process.env.myVariableName -> example appid: process.env.REACT_APP_WEATHER_API_KEY
+# Get Weather App
+
+A project in React that is taking the user location and shows the weather in that location. The user will find out what is the description of the weather, the humidity, chances of rain, wind, temperature and he will also be able to change the temperature from Fahrenheit to Celsiuse.
+
+
+   
