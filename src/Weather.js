@@ -75,9 +75,7 @@ class Weather extends React.Component {
     }
 
     render() {
-        console.log('before api call');
         if (this.props.coords && !this.state.response){
-            console.log('inside if');
             axios.get('https://api.openweathermap.org/data/2.5/weather?', {
                 params: {
                     lat: this.props.coords.latitude,
@@ -102,7 +100,6 @@ class Weather extends React.Component {
                     humidity: response.data.main.humidity,
                 })
             })
-        console.log(this.state, 'state');
         }
         return(
             <WeatherContainer>

@@ -4,31 +4,34 @@ exports[`Weather should render correctly with data 1`] = `
 <styled.div>
   <styled.h2>
      Today in: 
+    London
     , 
+    UK
   </styled.h2>
   <Icon
-    description=""
+    description="sunny"
   />
   <styled.p>
      We have 
+    sunny
     , with 
-    0
+    10
     % clouds
   </styled.p>
   <styled.p>
     The temperature is: 
-    0
+    -249.15
     °C, with minimum of 
-    0
+    -253.15
     °C and a maximum of 
-    0
+    -249.15
     °C
   </styled.p>
   <styled.p>
      The wind is blowing with: 
-    0
+    4.1
     m/s and we have a humidity of: 
-    0
+    10
     %
   </styled.p>
   <styled.button

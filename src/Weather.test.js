@@ -47,7 +47,8 @@ test("Weather should render correctly with data", (done) => {
         longitude: -0.059787999999999994
     }; 
     const wrapper = Enzyme.shallow(<Weather coords={coordinates} />)
-    wrapper.update();
-    expect(toJson(wrapper)).toMatchSnapshot();
-    done();
+    setTimeout(() => {
+        expect(toJson(wrapper)).toMatchSnapshot();
+        done();
+    })
 });
