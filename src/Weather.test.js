@@ -9,12 +9,16 @@ import MockAdapter from 'axios-mock-adapter';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+function flushPromises() {
+    return new Promise(resolve => setImmediate(resolve));
+}
+
 test("Weather should render correctly without data", () => {
     const wrapper = Enzyme.shallow(<Weather />)
     expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-test("Weather should render correctly with data", (done) => {
+test("Weather should render correctly with data", async () => {
     //we re returning a fake response
     const mockedResponse = {
         name: "London",
@@ -47,8 +51,6 @@ test("Weather should render correctly with data", (done) => {
         longitude: -0.059787999999999994
     }; 
     const wrapper = Enzyme.shallow(<Weather coords={coordinates} />)
-    setTimeout(() => {
-        expect(toJson(wrapper)).toMatchSnapshot();
-        done();
-    })
+    await flushPromises();
+    expect(toJson(wrapper)).toMatchSnapshot();
 });
