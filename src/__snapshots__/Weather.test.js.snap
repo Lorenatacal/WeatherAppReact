@@ -35,11 +35,13 @@ exports[`Weather should render correctly with data 1`] = `
     %
   </styled.p>
   <styled.button
+    data-name="fahrenheitButton"
     onClick={[Function]}
   >
     Change °F
   </styled.button>
   <styled.button
+    data-name="celsiuseButton"
     onClick={[Function]}
   >
     Change °C
@@ -79,14 +81,491 @@ exports[`Weather should render correctly without data 1`] = `
     %
   </styled.p>
   <styled.button
+    data-name="fahrenheitButton"
     onClick={[Function]}
   >
     Change °F
   </styled.button>
   <styled.button
+    data-name="celsiuseButton"
     onClick={[Function]}
   >
     Change °C
   </styled.button>
 </styled.div>
+`;
+
+exports[`fahrenheitButton should change the temperature from Celsiuse to Fahrenhite 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): ShallowWrapper {
+    Symbol(enzyme.__root__): [Circular],
+    Symbol(enzyme.__unrendered__): <Weather
+      coords={
+            Object {
+                  "latitude": 51.48827190000001,
+                  "longitude": -0.059787999999999994,
+                }
+      }
+/>,
+    Symbol(enzyme.__renderer__): Object {
+      "batchedUpdates": [Function],
+      "getNode": [Function],
+      "render": [Function],
+      "simulateEvent": [Function],
+      "unmount": [Function],
+    },
+    Symbol(enzyme.__node__): Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <styled.h2>
+             Today in: 
+            
+            , 
+            
+</styled.h2>,
+          <Icon
+            description=""
+/>,
+          <styled.p>
+             We have 
+            
+            , with 
+            0
+            % clouds
+</styled.p>,
+          <styled.p>
+            The temperature is: 
+            0
+            °C, with minimum of 
+            0
+            °C and a maximum of 
+            0
+            °C
+</styled.p>,
+          <styled.p>
+             The wind is blowing with: 
+            0
+            m/s and we have a humidity of: 
+            0
+            %
+</styled.p>,
+          <styled.button
+            data-name="fahrenheitButton"
+            onClick={[Function]}
+>
+            Change °F
+</styled.button>,
+          <styled.button
+            data-name="celsiuseButton"
+            onClick={[Function]}
+>
+            Change °C
+</styled.button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              " Today in: ",
+              "",
+              ", ",
+              "",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            " Today in: ",
+            "",
+            ", ",
+            "",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "description": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              " We have ",
+              "",
+              ", with ",
+              0,
+              "% clouds",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            " We have ",
+            "",
+            ", with ",
+            0,
+            "% clouds",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              "The temperature is: ",
+              0,
+              "°C, with minimum of ",
+              0,
+              "°C and a maximum of ",
+              0,
+              "°C",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "The temperature is: ",
+            0,
+            "°C, with minimum of ",
+            0,
+            "°C and a maximum of ",
+            0,
+            "°C",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              " The wind is blowing with: ",
+              0,
+              "m/s and we have a humidity of: ",
+              0,
+              "%",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            " The wind is blowing with: ",
+            0,
+            "m/s and we have a humidity of: ",
+            0,
+            "%",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Change °F",
+            "data-name": "fahrenheitButton",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Change °F",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Change °C",
+            "data-name": "celsiuseButton",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Change °C",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    Symbol(enzyme.__nodes__): Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <styled.h2>
+               Today in: 
+              
+              , 
+              
+</styled.h2>,
+            <Icon
+              description=""
+/>,
+            <styled.p>
+               We have 
+              
+              , with 
+              0
+              % clouds
+</styled.p>,
+            <styled.p>
+              The temperature is: 
+              0
+              °C, with minimum of 
+              0
+              °C and a maximum of 
+              0
+              °C
+</styled.p>,
+            <styled.p>
+               The wind is blowing with: 
+              0
+              m/s and we have a humidity of: 
+              0
+              %
+</styled.p>,
+            <styled.button
+              data-name="fahrenheitButton"
+              onClick={[Function]}
+>
+              Change °F
+</styled.button>,
+            <styled.button
+              data-name="celsiuseButton"
+              onClick={[Function]}
+>
+              Change °C
+</styled.button>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                " Today in: ",
+                "",
+                ", ",
+                "",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              " Today in: ",
+              "",
+              ", ",
+              "",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "description": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                " We have ",
+                "",
+                ", with ",
+                0,
+                "% clouds",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              " We have ",
+              "",
+              ", with ",
+              0,
+              "% clouds",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "The temperature is: ",
+                0,
+                "°C, with minimum of ",
+                0,
+                "°C and a maximum of ",
+                0,
+                "°C",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "The temperature is: ",
+              0,
+              "°C, with minimum of ",
+              0,
+              "°C and a maximum of ",
+              0,
+              "°C",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                " The wind is blowing with: ",
+                0,
+                "m/s and we have a humidity of: ",
+                0,
+                "%",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              " The wind is blowing with: ",
+              0,
+              "m/s and we have a humidity of: ",
+              0,
+              "%",
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Change °F",
+              "data-name": "fahrenheitButton",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Change °F",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Change °C",
+              "data-name": "celsiuseButton",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Change °C",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    Symbol(enzyme.__options__): Object {
+      "adapter": ReactSixteenAdapter {
+        "options": Object {
+          "enableComponentDidUpdateOnSetState": true,
+          "lifecycles": Object {
+            "componentDidUpdate": Object {
+              "onSetState": true,
+            },
+            "getDerivedStateFromProps": true,
+            "getSnapshotBeforeUpdate": true,
+            "setState": Object {
+              "skipsComponentDidUpdateOnNullish": true,
+            },
+          },
+        },
+      },
+      "attachTo": undefined,
+      "hydrateIn": undefined,
+    },
+  },
+  Symbol(enzyme.__unrendered__): null,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": "Change °F",
+      "data-name": "fahrenheitButton",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": "Change °F",
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": "Change °F",
+        "data-name": "fahrenheitButton",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": "Change °F",
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
 `;

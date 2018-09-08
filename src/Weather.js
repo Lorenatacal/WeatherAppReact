@@ -50,7 +50,6 @@ class Weather extends React.Component {
             clouds: 0,
             icon: '',
             tempCelsiuse: 0,
-            tempCelsiuseI: 0,
             tempFahrenheit: 0,
             minTempCelsiuse: 0,
             minTempFahrenheit: 0,
@@ -112,8 +111,8 @@ class Weather extends React.Component {
                         <StyledText> The temperature is: {this.state.tempFahrenheit}°F, with minimum of {this.state.minTempFahrenheit}°F and a maximum of {this.state.maxTempFahrenheit}°F</StyledText>
                 }
                 <StyledText> The wind is blowing with: {this.state.wind}m/s and we have a humidity of: {this.state.humidity}%</StyledText>
-                <StyledButton onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
-                <StyledButton onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
+                <StyledButton data-name="fahrenheitButton" onClick={this.handleClickFahrenheit}>Change °F</StyledButton>
+                <StyledButton data-name="celsiuseButton" onClick={this.handleClickCelsiuse}>Change °C</StyledButton>
             </WeatherContainer>
         )
     }

@@ -54,3 +54,40 @@ test("Weather should render correctly with data", async () => {
     await flushPromises();
     expect(toJson(wrapper)).toMatchSnapshot();
 });
+
+test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite", () => {
+    const mockedResponse = {
+        name: "London",
+        sys: {
+            country: "UK",
+        },
+        weather: [{
+            description: "sunny",
+        }],
+        main: {
+            temp: 24,
+            temp_min: 20,
+            temp_max: 24,
+            humidity: 10,
+        },
+        clouds: {
+            all: 10,
+        },
+        wind: {
+            speed: 4.1,
+        },
+    };
+    const mock = new MockAdapter(axios);
+    mock
+        .onGet('https://api.openweathermap.org/data/2.5/weather?')
+        .reply(200, mockedResponse);
+
+    const coordinates = {
+        latitude: 51.48827190000001, 
+        longitude: -0.059787999999999994
+    }; 
+
+    const wrapper = Enzyme.shallow(<Weather coords={coordinates} />)
+    const button = wrapper.find('[data-name="fahrenheitButton"]')
+    
+})
