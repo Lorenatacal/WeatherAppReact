@@ -95,6 +95,55 @@ exports[`Weather should render correctly without data 1`] = `
 </styled.div>
 `;
 
+exports[`celsiuseButton should change the temperature from Farenhite to Celsiuse 1`] = `
+<styled.div>
+  <styled.h2>
+     Today in: 
+    London
+    , 
+    UK
+  </styled.h2>
+  <Icon
+    description="sunny"
+  />
+  <styled.p>
+     We have 
+    sunny
+    , with 
+    10
+    % clouds
+  </styled.p>
+  <styled.p>
+    The temperature is: 
+    23
+    °C, with minimum of 
+    20
+    °C and a maximum of 
+    23
+    °C
+  </styled.p>
+  <styled.p>
+     The wind is blowing with: 
+    4.1
+    m/s and we have a humidity of: 
+    10
+    %
+  </styled.p>
+  <styled.button
+    data-name="fahrenheitButton"
+    onClick={[Function]}
+  >
+    Change °F
+  </styled.button>
+  <styled.button
+    data-name="celsiuseButton"
+    onClick={[Function]}
+  >
+    Change °C
+  </styled.button>
+</styled.div>
+`;
+
 exports[`fahrenheitButton should change the temperature from Celsiuse to Fahrenhite 1`] = `
 <styled.div>
   <styled.h2>

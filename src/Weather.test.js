@@ -92,4 +92,44 @@ test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite
     const button = wrapper.find('[data-name="fahrenheitButton"]');
     button.simulate('click');
     expect(toJson(wrapper)).toMatchSnapshot();  
-})
+});
+
+test("celsiuseButton should change the temperature from Farenhite to Celsiuse", async () => {
+    const mockedResponse = {
+        name: "London",
+        sys: {
+            country: "UK",
+        },
+        weather: [{
+            description: "sunny",
+        }],
+        main: {
+            temp: 296.15,
+            temp_min: 293.15,
+            temp_max: 296.15,
+            humidity: 10,
+        },
+        clouds: {
+            all: 10,
+        },
+        wind: {
+            speed: 4.1,
+        },
+    };
+    const mock = new MockAdapter(axios);
+    mock
+        .onGet('https://api.openweathermap.org/data/2.5/weather?')
+        .reply(200, mockedResponse);
+
+    const coordinates = {
+        latitude: 51.48827190000001, 
+        longitude: -0.059787999999999994
+    }; 
+
+const wrapper = Enzyme.shallow(<Weather coords={coordinates} />);
+await flushPromises();
+const celsiuseButton = wrapper.find('[data-name="celsiuseButton"]');
+celsiuseButton.simulate('click');
+expect(toJson(wrapper)).toMatchSnapshot();
+   
+});
