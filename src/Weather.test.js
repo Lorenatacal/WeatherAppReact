@@ -94,7 +94,7 @@ test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite
     expect(toJson(wrapper)).toMatchSnapshot();  
 });
 
-test("celsiuseButton should change the temperature from Farenhite to Celsiuse", async () => {
+test("celsiuseButton should change the temperature from Fahrenheit to Celsiuse", async () => {
     const mockedResponse = {
         name: "London",
         sys: {
@@ -131,5 +131,5 @@ await flushPromises();
 const celsiuseButton = wrapper.find('[data-name="celsiuseButton"]');
 celsiuseButton.simulate('click');
 expect(toJson(wrapper)).toMatchSnapshot();
-   
+  
 });

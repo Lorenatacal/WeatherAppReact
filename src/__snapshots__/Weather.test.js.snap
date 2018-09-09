@@ -95,7 +95,7 @@ exports[`Weather should render correctly without data 1`] = `
 </styled.div>
 `;
 
-exports[`celsiuseButton should change the temperature from Farenhite to Celsiuse 1`] = `
+exports[`celsiuseButton should change the temperature from Fahrenheit to Celsiuse 1`] = `
 <styled.div>
   <styled.h2>
      Today in: 
