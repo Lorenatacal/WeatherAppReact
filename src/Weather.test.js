@@ -29,9 +29,9 @@ test("Weather should render correctly with data", async () => {
             description: "sunny",
         }],
         main: {
-            temp: 24,
-            temp_min: 20,
-            temp_max: 24,
+            temp: 296,
+            temp_min: 293.15,
+            temp_max: 296,
             humidity: 10,
         },
         clouds: {
@@ -55,7 +55,7 @@ test("Weather should render correctly with data", async () => {
     expect(toJson(wrapper)).toMatchSnapshot();
 });
 
-test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite", () => {
+test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite", async () => {
     const mockedResponse = {
         name: "London",
         sys: {
@@ -65,9 +65,9 @@ test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite
             description: "sunny",
         }],
         main: {
-            temp: 24,
-            temp_min: 20,
-            temp_max: 24,
+            temp: 296.15,
+            temp_min: 293.15,
+            temp_max: 296.15,
             humidity: 10,
         },
         clouds: {
@@ -88,6 +88,8 @@ test("fahrenheitButton should change the temperature from Celsiuse to Fahrenhite
     }; 
 
     const wrapper = Enzyme.shallow(<Weather coords={coordinates} />)
-    const button = wrapper.find('[data-name="fahrenheitButton"]')
-    
+    await flushPromises();
+    const button = wrapper.find('[data-name="fahrenheitButton"]');
+    button.simulate('click');
+    expect(toJson(wrapper)).toMatchSnapshot();  
 })
