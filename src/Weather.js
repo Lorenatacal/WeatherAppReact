@@ -74,6 +74,7 @@ class Weather extends React.Component {
     }
 
     render() {
+        const description = this.state.description;
         if (this.props.coords && !this.state.response){
             axios.get('https://api.openweathermap.org/data/2.5/weather?', {
                 params: {
@@ -103,7 +104,7 @@ class Weather extends React.Component {
         return(
             <WeatherContainer>
                 <StyledLocation> Today in: {this.state.name}, {this.state.country}</StyledLocation>
-                <Icon description={this.state.description}/>
+                <Icon description={description}/>
                 <StyledText> We have {this.state.description}, with {this.state.clouds}% clouds</StyledText>
                 {
                     this.state.showCelsiuse ?  

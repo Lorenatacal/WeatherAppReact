@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon should show render rainIcon when the description has the word rain 1`] = `
+<div>
+  <img
+    className="Icon-logo"
+    src="http://icons.iconarchive.com/icons/large-icons/large-weather/256/rain-icon.png"
+  />
+</div>
+`;

@@ -16,7 +16,8 @@ class Icon extends React.Component {
         };
     }
     render() {
-        if(this.props.description.includes("rain")) {
+        const description = this.props.description;
+        if(description.includes("rain")) {
             return (
                 <div>
                     <img src={this.state.rainIcon} className="Icon-logo"/>

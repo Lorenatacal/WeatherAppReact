@@ -130,6 +130,5 @@ const wrapper = Enzyme.shallow(<Weather coords={coordinates} />);
 await flushPromises();
 const celsiuseButton = wrapper.find('[data-name="celsiuseButton"]');
 celsiuseButton.simulate('click');
-expect(toJson(wrapper)).toMatchSnapshot();
-  
+expect(toJson(wrapper)).toMatchSnapshot();  
 });
