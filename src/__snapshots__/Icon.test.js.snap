@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon should show render rainIcon when the description has the word rain 1`] = `
+exports[`Icon should render snowIcon when the description includes the word snow) 1`] = `
+<div>
+  <img
+    className="Icon-logo"
+    src="http://www.free-icons-download.net/images/blue-snow-icon-38706.png"
+  />
+</div>
+`;
+
+exports[`Icon should show render rainIcon when the description includes the word rain 1`] = `
 <div>
   <img
     className="Icon-logo"

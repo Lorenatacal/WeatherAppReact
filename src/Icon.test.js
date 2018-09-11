@@ -16,4 +16,10 @@ test("Icon should show render rainIcon when the description includes the word ra
     const wrapper = Enzyme.shallow(<Icon description={description} />);
     // take a shanpshot and compare result
     expect(toJson(wrapper)).toMatchSnapshot();
-})
+});
+
+test("Icon should render snowIcon when the description includes the word snow)", () => {
+    const description = "snow";
+    const wrapper = Enzyme.shallow(<Icon description={description} />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+});
