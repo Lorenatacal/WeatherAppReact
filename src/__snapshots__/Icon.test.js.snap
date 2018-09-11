@@ -9,6 +9,15 @@ exports[`Icon should render cloudIcon when the description includes the word clo
 </div>
 `;
 
+exports[`Icon should render fogIcon when the description includes the word fog 1`] = `
+<div>
+  <img
+    className="Icon-logo"
+    src="http://icongal.com/gallery/download/43079/256/png"
+  />
+</div>
+`;
+
 exports[`Icon should render snowIcon when the description includes the word snow) 1`] = `
 <div>
   <img
