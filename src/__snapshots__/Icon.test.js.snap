@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Icon should render cloudIcon when the description includes the word cloud 1`] = `
+<div>
+  <img
+    className="Icon-logo"
+    src="https://vignette.wikia.nocookie.net/farmville/images/5/57/Puffy_Cloud-icon.png/revision/latest?cb=20121010151231"
+  />
+</div>
+`;
+
 exports[`Icon should render snowIcon when the description includes the word snow) 1`] = `
 <div>
   <img

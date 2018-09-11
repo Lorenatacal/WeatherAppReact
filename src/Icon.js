@@ -41,7 +41,7 @@ class Icon extends React.Component {
                     <img src={this.state.windIcon} className="Icon-logo"/>
                 </div>
             )
-        } else if(this.props.description.includes("clouds")) {
+        } else if(this.props.description.includes("cloud")) {
             return (
                 <div>
                     <img src={this.state.cloudIcon} className="Icon-logo"/>
