@@ -18,6 +18,15 @@ exports[`Icon should render sunIcon when the description includes the word sun 1
 </div>
 `;
 
+exports[`Icon should render windIcon when the description includes the word wind 1`] = `
+<div>
+  <img
+    className="Icon-logo"
+    src="http://moziru.com/images/wind-clipart-weather-symbol-11.png"
+  />
+</div>
+`;
+
 exports[`Icon should show render rainIcon when the description includes the word rain 1`] = `
 <div>
   <img
