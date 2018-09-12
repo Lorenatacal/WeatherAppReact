@@ -18,6 +18,15 @@ exports[`Icon should render fogIcon when the description includes the word fog 1
 </div>
 `;
 
+exports[`Icon should render mixtIcon when the description includes a different word 1`] = `
+<div>
+  <img
+    className="Icon-logo"
+    src="https://images.onlinelabels.com/images/clip-art/Anonymous/Anonymous_simple_weather_symbols_13.png"
+  />
+</div>
+`;
+
 exports[`Icon should render snowIcon when the description includes the word snow) 1`] = `
 <div>
   <img

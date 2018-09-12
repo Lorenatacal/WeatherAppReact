@@ -40,10 +40,16 @@ test("Icon should render cloudIcon when the description includes the word cloud"
     const description = "cloud";
     const wrapper = Enzyme.shallow(<Icon description={description} />);
     expect(toJson(wrapper)).toMatchSnapshot();
-})
+});
 
 test("Icon should render fogIcon when the description includes the word fog", () => {
     const fog = "fog";
     const wrapper = Enzyme.shallow(<Icon description={fog} />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+});
+
+test("Icon should render mixtIcon when the description includes a different word", () => {
+    const description = "";
+    const wrapper = Enzyme.shallow(<Icon description={description} />);
     expect(toJson(wrapper)).toMatchSnapshot();
 })
