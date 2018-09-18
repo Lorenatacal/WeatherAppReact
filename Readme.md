@@ -29,6 +29,10 @@ Weather App with the temperature in Fahrenheit:
 
 ## Extra info:
 
+All the routes are created at the top level component `<App />`
+To style the project I have used Styled Components, the styling being secondary in importance to the features.
+This was a good learning opportunity as I created the first React Project calling an API call, I have also used a Higher-Order Component and I have also tested my project for the first time .
+
 #### Testing
 console.log(wrapper.debug()); - print a wrapper react component in the terminal; while running Jest
 git commit --amend - changes the git commit message
